@@ -1,0 +1,15 @@
+
+> student-information-frontend@1.0.0 test
+> vitest run
+
+
+ RUN  v3.2.7 /Users/user/Desktop/Developments/special_topics/Act2/frontend
+
+ ✓ tests/validation.test.ts (6 tests) 6ms
+ ✓ tests/client.test.ts (8 tests) 17ms
+ ✓ tests/auth.test.tsx (2 tests) 452ms
+
+ Test Files  3 passed (3)
+      Tests  16 passed (16)
+   Start at  11:43:11
+   Duration  1.83s (transform 179ms, setup 525ms, collect 417ms, tests 475ms, environment 1.40s, prepare 281ms)

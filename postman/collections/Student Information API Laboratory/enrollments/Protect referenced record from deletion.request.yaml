@@ -1,0 +1,9 @@
+$kind: http-request
+description: Expected HTTP 409. Run against the seeded local database.
+url: "{{base_url}}/api/v1/enrollments/1"
+method: DELETE
+scripts:
+  - type: afterResponse
+    code: pm.test("HTTP 409", () => pm.response.to.have.status(409));
+    language: text/javascript
+order: 5000

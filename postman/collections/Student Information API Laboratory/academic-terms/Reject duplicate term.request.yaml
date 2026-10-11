@@ -1,0 +1,20 @@
+$kind: http-request
+description: Expected HTTP 409. Run against the seeded local database.
+url: "{{base_url}}/api/v1/academic-terms"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "academic_year": "2026-2027",
+      "semester": "FIRST",
+      "start_date": "2026-08-01",
+      "end_date": "2026-12-20"
+    }
+scripts:
+  - type: afterResponse
+    code: pm.test("HTTP 409", () => pm.response.to.have.status(409));
+    language: text/javascript
+order: 4000

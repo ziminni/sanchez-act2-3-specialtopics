@@ -1,0 +1,20 @@
+
+> student-information-frontend@1.0.0 test:e2e
+> playwright test
+
+[WebServer] INFO:     Started server process [98356]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+
+Running 7 tests using 1 worker
+
+  ✓  1 tests/e2e/activity3.spec.ts:34:1 › authentication, protected navigation, expired sessions and logout (3.5s)
+  ✓  2 tests/e2e/activity3.spec.ts:63:1 › students use backend search, filters, pagination, CRUD and validation (3.8s)
+  ✓  3 tests/e2e/activity3.spec.ts:124:1 › reference data, offerings, enrollment and grades complete a real academic flow (5.2s)
+  ✓  4 tests/e2e/activity3.spec.ts:216:1 › restricted roles keep backend authorization authoritative (4.6s)
+  ✓  5 tests/e2e/activity3.spec.ts:269:1 › controlled loading, offline, server error, missing record and route states (3.7s)
+  ✓  6 tests/e2e/activity3.spec.ts:307:1 › major modules and narrow layout are usable (4.7s)
+  ✓  7 tests/e2e/activity3.spec.ts:343:1 › stale enrollment reference is rejected by the real backend and shown inline (1.8s)
+
+  7 passed (32.9s)

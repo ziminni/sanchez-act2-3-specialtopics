@@ -1,0 +1,15 @@
+# Use this workspace to collaborate
+workspace:
+  id: 4a405aee-1ddf-43d6-860c-cf8bb69c5b74
+
+localResources:
+  collections:
+    - ../docs/postman_collection.json
+  specs:
+    - ../docs/openapi.json
+
+# Each entry here maps a local resource to one or more corresponding objects in Postman Cloud
+
+cloudResources:
+  collections:
+    ../postman/collections/Student Information API Laboratory: 5e905295-9dac-430b-85e9-33f8d9b3f04d

@@ -1,0 +1,2 @@
+PASS: actual frontend login and student directory with current .env password
+PASS: frontend logout

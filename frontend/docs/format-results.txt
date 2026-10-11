@@ -1,0 +1,6 @@
+
+> student-information-frontend@1.0.0 format:check
+> prettier --check src tests *.ts *.json
+
+Checking formatting...
+All matched files use Prettier code style!

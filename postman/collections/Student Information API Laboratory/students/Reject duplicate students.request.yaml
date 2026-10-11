@@ -1,0 +1,22 @@
+$kind: http-request
+description: Expected HTTP 409. Run against the seeded local database.
+url: "{{base_url}}/api/v1/students"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "student_number": "S{{run_id}}",
+      "first_name": "Maria",
+      "last_name": "Reyes",
+      "email": "maria@example.com",
+      "program_id": {{program_id}},
+      "year_level": 1
+    }
+scripts:
+  - type: afterResponse
+    code: pm.test("HTTP 409", () => pm.response.to.have.status(409));
+    language: text/javascript
+order: 6000

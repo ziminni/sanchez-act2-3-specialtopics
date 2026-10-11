@@ -1,0 +1,17 @@
+$kind: http-request
+description: Expected HTTP 200. Run against the seeded local database.
+url: "{{base_url}}/api/v1/programs/{{program_id}}"
+method: PATCH
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "name": "Updated program"
+    }
+scripts:
+  - type: afterResponse
+    code: pm.test("HTTP 200", () => pm.response.to.have.status(200));
+    language: text/javascript
+order: 4000

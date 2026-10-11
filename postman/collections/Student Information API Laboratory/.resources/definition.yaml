@@ -1,0 +1,16 @@
+$kind: collection
+description: Run against a freshly seeded database. Set password to your local SEED_PASSWORD. Run folders in order. Positive and negative requests assert expected status. Subsequent runs create additional synthetic records.
+variables:
+  base_url: http://127.0.0.1:8000
+  password: ""
+  token: ""
+scripts:
+  - type: http:beforeRequest
+    code: if (pm.info.requestName === "Login as admin") pm.collectionVariables.set("run_id", Date.now().toString());
+    language: text/javascript
+auth:
+  - id: b46fc06b-2d15-4f01-8f88-328f18f1b71a
+    type: bearer
+    name: bearer auth
+    credentials:
+      token: "{{token}}"

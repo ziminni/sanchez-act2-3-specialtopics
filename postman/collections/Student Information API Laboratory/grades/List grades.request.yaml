@@ -1,0 +1,12 @@
+$kind: http-request
+description: Expected HTTP 200. Run against the seeded local database.
+url: "{{base_url}}/api/v1/grades?page=1&per_page=20"
+method: GET
+queryParams:
+  page: "1"
+  per_page: "20"
+scripts:
+  - type: afterResponse
+    code: pm.test("HTTP 200", () => pm.response.to.have.status(200));
+    language: text/javascript
+order: 2000

@@ -1,0 +1,11 @@
+$kind: http-request
+description: Expected HTTP 200. Run against the seeded local database.
+url: "{{base_url}}/api/v1/academic-terms/1"
+method: GET
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 200", () => pm.response.to.have.status(200));
+      if (pm.response.code === 200) pm.collectionVariables.set("term_id", pm.response.json().data.id);
+    language: text/javascript
+order: 3000

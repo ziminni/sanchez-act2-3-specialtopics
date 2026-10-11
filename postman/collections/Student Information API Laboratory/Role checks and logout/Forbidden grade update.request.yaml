@@ -1,0 +1,17 @@
+$kind: http-request
+description: Expected HTTP 403. Run against the seeded local database.
+url: "{{base_url}}/api/v1/grades/1"
+method: PATCH
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "final_grade": 100
+    }
+scripts:
+  - type: afterResponse
+    code: pm.test("HTTP 403", () => pm.response.to.have.status(403));
+    language: text/javascript
+order: 8000

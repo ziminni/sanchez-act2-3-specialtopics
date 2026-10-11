@@ -1,0 +1,25 @@
+$kind: http-request
+description: Expected HTTP 201. Run against the seeded local database.
+url: "{{base_url}}/api/v1/course-offerings"
+method: POST
+headers:
+  Content-Type: application/json
+body:
+  type: json
+  content: |-
+    {
+      "course_id": {{course_id}},
+      "academic_term_id": {{term_id}},
+      "instructor_id": 3,
+      "section": "B",
+      "schedule": "Tuesday 09:00-10:30",
+      "room": "R101",
+      "capacity": 30
+    }
+scripts:
+  - type: afterResponse
+    code: |-
+      pm.test("HTTP 201", () => pm.response.to.have.status(201));
+      if (pm.response.code === 201) pm.collectionVariables.set("offering_id", pm.response.json().data.id);
+    language: text/javascript
+order: 1000
